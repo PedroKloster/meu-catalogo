@@ -57,7 +57,7 @@ formCatalogo.addEventListener('submit', async (evento) => {
 
 async function excluirItem(id) {
     if(confirm("Tem certeza que deseja excluir este item?")) {
-        await fetch(`https://meu-catalogo-4cl0.onrender.com/itens${id}`, {
+        await fetch(`https://meu-catalogo-4cl0.onrender.com/itens/${id}`, {
             method: 'DELETE'
         });
         carregarItens();
