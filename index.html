@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Meu Catálogo</h1>
+        </header>
+
+        <section class="form-section">
+            <h2>Cadastrar Novo Item</h2>
+            <form id="formCatalogo">
+                
+                <select id="categoria" required>
+                    <option value="" disabled selected>Selecione a Categoria...</option>
+                    <option value="Filme">Filme</option>
+                    <option value="Livro">Livro</option>
+                    <option value="Produto">Produto</option>
+                    <option value="Curso">Curso</option>
+                </select>
+
+                <input type="text" id="nome" placeholder="Insira o título..." required>
+                <input type="number" id="nota" placeholder="Dê uma nota de 0 a 10..." step="0.1" min="0" max="10">
+                <input type="number" id="preco" placeholder="Insira o preço (R$)..." step="0.01" min="0">
+                <textarea id="descricao" placeholder="Escreva sobre o item..." rows="3"></textarea>
+                <button type="submit">Cadastrar Item</button>
+            </form>
+        </section>
+
+        <section class="catalogo-section">
+            <h2>Itens Cadastrados</h2>
+            <div id="gridCatalogo" class="grid-container">
+                </div>
+        </section>
+    </div>
+
+    <script src="scripts/script.js"></script>
+</body>
+</html>
