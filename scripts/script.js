@@ -3,7 +3,7 @@ const gridCatalogo = document.getElementById('gridCatalogo');
 
 async function carregarItens() {
     try {
-        const resposta = await fetch('https://meu-catalogo-4cl0.onrender.com');
+        const resposta = await fetch('https://meu-catalogo-4cl0.onrender.com/itens');
         const itens = await resposta.json();
         
         gridCatalogo.innerHTML = ''; 
@@ -45,7 +45,7 @@ formCatalogo.addEventListener('submit', async (evento) => {
         preco: document.getElementById('preco').value
     };
 
-    await fetch('https://meu-catalogo-4cl0.onrender.com', {
+    await fetch('https://meu-catalogo-4cl0.onrender.com/itens', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(novoItem)
@@ -57,7 +57,7 @@ formCatalogo.addEventListener('submit', async (evento) => {
 
 async function excluirItem(id) {
     if(confirm("Tem certeza que deseja excluir este item?")) {
-        await fetch(` https://meu-catalogo-4cl0.onrender.com${id}`, {
+        await fetch(` https://meu-catalogo-4cl0.onrender.com/itens${id}`, {
             method: 'DELETE'
         });
         carregarItens();
