@@ -55,7 +55,7 @@ app.delete('/itens/:id', (req, res) => {
     });
 });
 
-const porta = process.env.PORT || 3000;
+const porta = process.env.PORT || 4000;
 app.listen(porta, () => {
     console.log(`Servidor rodando na porta ${porta}`);
 });
